@@ -1,0 +1,8 @@
+---
+- name: Install automariadbbackup
+  apt: name={{item}} state=present
+  with_items:
+  - automariadbbackup
+
+- name: Configure automariadbbackup
+  template: src=automariadbbackup.j2 dest=/etc/default/automariadbbackup
