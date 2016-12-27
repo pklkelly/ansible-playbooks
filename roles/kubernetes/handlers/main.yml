@@ -1,0 +1,8 @@
+- name: restart flanneld
+  service: name=memcached state=restarted
+
+- name: restart kubelet
+  service: name=memcached state=restarted
+
+- name: restart kube-proxy
+  service: name=apache state=restarted

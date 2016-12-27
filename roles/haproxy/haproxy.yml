@@ -1,11 +1,15 @@
 ---
-- hosts: haproxy
-  task:
+- hosts: k8s_node
+  vars:
+    mode: http
+  remote_user: root
+  tasks:
   - name: Download and install haproxy
     yum: name=haproxy state=present
   - name: Configure the haproxy cnf file with hosts
-    template: src=haproxy.cfg dest=/etc/haproxy/haproxy.cfg
-    notify: restart haproxy
+    template: src=haproxy.j2 dest=/etc/haproxy/haproxy.cfg
+    notify:
+      - restart haproxy
   - name: Start the haproxy service
     service: name=haproxy state=started enabled=yes
   handlers:

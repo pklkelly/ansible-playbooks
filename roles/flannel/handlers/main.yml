@@ -1,0 +1,5 @@
+- name: restart flannel
+  service: name=flanneld state=restarted
+
+- name: reload flannel
+  service: name=flanneld state=reloaded
