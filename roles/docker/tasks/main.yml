@@ -1,0 +1,14 @@
+---
+
+- name: Download and install docker
+  yum: name=docker state=present
+
+- name: Modify docker log driver
+  replace:
+    dest: /etc/sysconfig/docker
+    regexp: '(\s+)--log-driver=journald(\s+)'
+    replace: '\1journald\2json-file'
+    backup: yes
+
+- name: Start the docker service
+  service: name=docker state=started enabled=yes

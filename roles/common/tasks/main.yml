@@ -1,5 +1,8 @@
 ---
 # file: roles/common/tasks/main.yml
+- name: be sure firewall is stop and disabled
+  service: name=firewalld state=stoped enabled=no
+  tags: firewall
 
 - name: be sure ntp is installed
   yum: name=ntp state=installed
