@@ -1,0 +1,2 @@
+hostip: "{{ ansible_default_ipv4.address }}"
+cluster_domain: "zeusis.local"

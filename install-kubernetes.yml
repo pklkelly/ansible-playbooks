@@ -6,6 +6,5 @@
   remote_user: root
   roles:
   - role: kubernetes
-
-  roles:
-   - { role: http, http_port: 2020,ServerName: "{{ansible_nodename}}"}
+    vars:
+      kube_master: 192.168.61.2
