@@ -1,0 +1,11 @@
+#
+#About: This will install docker
+#
+---
+- hosts: k8s_node
+  remote_user: root
+  roles:
+  - role: kubernetes
+
+  roles:
+   - { role: http, http_port: 2020,ServerName: "{{ansible_nodename}}"}
