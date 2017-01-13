@@ -5,3 +5,4 @@
 *.rpm
 kubelet
 kube-proxy
+ca.crt

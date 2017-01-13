@@ -1,10 +1,10 @@
 ---
 
 - name: Stop the docker service
-  service: name=docker state=stoped
+  service: name=docker state=stopped
 
 - name: Delete the docker container files
-  shell: rm -rf /var/lib/docker
+  file: path=/var/lib/docker state=absent
 
 - name: Create docker vg
   lvg: vg=docker pvs={{ pv }}
@@ -16,7 +16,7 @@
   lineinfile: dest=/etc/sysconfig/docker-storage-setup line="VG=docker"
 
 - name: Setup docker use_deferred_removal
-  lineinfile: dest=/etc/sysconfig/docker-storage-setup line='EXTRA_DOCKER_STORAGE_OPTIONS=" --storage-opt dm.use_deferred_removal=true'
+  lineinfile: dest=/etc/sysconfig/docker-storage-setup line='EXTRA_DOCKER_STORAGE_OPTIONS=" --storage-opt dm.use_deferred_removal=true"'
 
 - name: Setup docker storage
   shell: docker-storage-setup

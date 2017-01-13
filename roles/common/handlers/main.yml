@@ -2,3 +2,7 @@
 # file: roles/common/handlers/main.yml
 - name: restart ntpd
   service: name=ntpd state=restarted
+
+- name: restart nfs
+  service: name=rpcbind state=restarted enabled=true
+  service: name=nfs-server state=restarted enabled=true

@@ -8,6 +8,7 @@
   - { role: common, tags: [ 'firewall', 'ntp' ] }
   - role: docker
   - { role: docker2thinpool, pv: /dev/vdb }
+  - role: docker-registry-client-ca
   - role: flannel
     vars:
       etcd_endpoints: "http://192.168.72.128:2379,http://192.168.72.63:2379,http://192.168.72.157:2379"

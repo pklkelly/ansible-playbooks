@@ -11,7 +11,8 @@ KUBELET_PORT="--port=10250"
 KUBELET_HOSTNAME="--hostname-override={{ hostip }}"
 
 # pod infrastructure container
-KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+#KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
+KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=k8s-registry.zeusis.com:32000/pod-infrastructure:latest"
 
 # Add your own!
-KUBELET_ARGS="--require-kubeconfig=true --pod-manifest-path=manifests --cni-bin-dir=cni/bin --cni-conf-dir=cni/net.d --cluster-dns={{ kube_master }} --cluster-domain={{ cluster_domain }}"
+KUBELET_ARGS="--require-kubeconfig=true --pod-manifest-path=manifests --cni-bin-dir=cni/bin --cni-conf-dir=cni/net.d --cluster-dns={{ cluster_dns_ip }} --cluster-domain={{ cluster_domain }}"
