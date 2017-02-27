@@ -1,0 +1,6 @@
+- name: create user  
+  user: uid=6380  name=redis
+- name: create document 
+  file: path=/data/redis  state=directory owner=redis group=redis
+- name: provides redis.conf
+  template: src=redis.conf  dest=/data/redis/redis.conf owner=redis group=redis

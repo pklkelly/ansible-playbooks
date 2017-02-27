@@ -1,0 +1,6 @@
+- name: create user
+  user: uid=3310  name=mysql
+- name: create document
+  file: path=/data/mysql  state=directory owner=mysql group=mysql
+- name: provides my.cnf
+  template: src=my.cnf  dest=/data/mysql/my.cnf owner=mysql group=mysql
