@@ -1,18 +1,1 @@
-[redis_db]
-192.168.11.241 ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.40    ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-[mongo_db]
-192.168.11.2  ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.247   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.137   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.40    ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.241 ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-[mysql_db]
-192.168.11.247   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.137   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.40    ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-192.168.11.207   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-[sync]
-192.168.11.2  ansible_ssh_user=root ansible_ssh_pass=zeusis2016
-[push]
-192.168.11.137   ansible_ssh_user=root ansible_ssh_pass=zeusis2016
+192.168.11.137   ansible_ssh_user= ansible_ssh_pass=
