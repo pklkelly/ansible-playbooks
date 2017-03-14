@@ -1,0 +1,10 @@
+- name: Create user
+  user: uid=4521  name=telegraf
+- name: open installtion directory 
+  command: cd /home/telegraf/
+- name: Get telegraf.tar.gz
+  command: wget  https://dl.influxdata.com/telegraf/releases/telegraf-1.1.2_linux_amd64.tar.gz 
+- name: Decompress the compressed package
+  command: tar zxf /home/telegraf/telegraf-1.1.2_linux_amd64.tar.gz .  owner=telegraf  group=telegraf
+- name: provides telegraf.conf
+  template: src=telegraf.conf  dest=/home/telegraf/telegraf/usr/bin/   owner=telegraf  group=telegraf

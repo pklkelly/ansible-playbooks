@@ -1,0 +1,4 @@
+- hosts: all
+- name: create user
+  user: name=telegraf
+   
