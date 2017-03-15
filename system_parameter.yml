@@ -2,4 +2,4 @@
   gather_facts: no
   tasks:
      - name: Set system  Configuration  from file
-       shell: fdsik.sh
+       script: fdsik.sh

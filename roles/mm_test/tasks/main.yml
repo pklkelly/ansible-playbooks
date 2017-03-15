@@ -1,0 +1,12 @@
+- name: open installtion directory 
+  command: cd /tmp
+- name: provides my.cnf
+  template: src=my.cnf  dest=/tmp/my.cnf 
+- name: provides tar
+  copy: src=aa.tar.gz   dest=/tmp/aa.tar.gz
+#- name: Decompress the compressed package
+#  command: tar zxf aa.tar.gz 
+- name: Initialize the database
+  script: initialize.sh 
+
+

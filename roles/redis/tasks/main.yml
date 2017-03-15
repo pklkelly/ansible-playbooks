@@ -2,5 +2,9 @@
   user: uid=6380  name=redis
 - name: create document 
   file: path=/data/redis  state=directory owner=redis group=redis
+- name: create data  document 
+  file: path=/data/redis/redis_db  state=directory owner=redis group=redis
 - name: provides redis.conf
   template: src=redis.conf  dest=/data/redis/redis.conf owner=redis group=redis
+- name: Decompress the compressed package,Create a soft connection,Add environment variable,Start service
+  script: redis_start.sh

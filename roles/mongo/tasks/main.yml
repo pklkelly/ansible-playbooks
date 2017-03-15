@@ -2,7 +2,11 @@
   user: uid=27020  name=mongo 
 - name: create document 
   file: path=/data/mongo  state=directory owner=mongo group=mongo
+- name: create data document 
+  file: path=/data/mongo/db  state=directory owner=mongo group=mongo
 - name: provides mongod.conf
   template: src=mongod.conf  dest=/data/mongo/mongod.conf owner=mongo group=mongo
 - name: provides mongodb_start.sh
   copy: src=mongodb_start.sh dest=/data/mongo/mongodb_start.sh  owner=mongo group=mongo
+- name: script
+  script: mongo_start.sh

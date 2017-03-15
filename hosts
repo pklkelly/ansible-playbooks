@@ -1,1 +1,2 @@
-192.168.11.137   ansible_ssh_user= ansible_ssh_pass=
+[aa]
+192.168.11.40   ansible_ssh_user=root  ansible_ssh_pass=zeusis2016

@@ -1,6 +1,8 @@
 - name: create user
   user: uid=3310  name=mysql
-- name: create document
+- name: create document 
   file: path=/data/mysql  state=directory owner=mysql group=mysql
 - name: provides my.cnf
-  template: src=my.cnf  dest=/data/mysql/my.cnf owner=mysql group=mysql
+  template: src=my.cnf  dest=/data/mysql/my.cnf owner=mysql group=mysql 
+- name: Decompress the compressed package,Create a soft connection,Add environment variable,Initialize the database,Start service
+  script: mysql_start.sh
