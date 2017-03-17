@@ -1,4 +1,4 @@
-- hosts: [mysql_db]
+- hosts: [aa]
   roles:
   - mysql
     

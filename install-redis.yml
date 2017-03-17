@@ -1,4 +1,4 @@
-- hosts: [redis_db]
+- hosts: [aa]
   roles:
   - redis
     
